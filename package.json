@@ -1,0 +1,23 @@
+{
+  "name": "coffeeshop",
+  "version": "1.0.0",
+  "description": "Hello",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggs-benny/coffee-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eggs-benny/coffee-shop/issues"
+  },
+  "homepage": "https://github.com/eggs-benny/coffee-shop#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
