@@ -1,41 +1,36 @@
-//import shopData from './exampleCoffeeInfo.json';
-
 export default class Receipt {
-  getJsonData(): object[] {
-    const shopData = require('./exampleCoffeeInfo.json')
+  shopData: any;
+  constructor() {
+    this.shopData = this.getJsonData()[0];
+  }
 
-    return shopData
+  getJsonData(): object[] {
+    const data = require('./exampleCoffeeInfo.json');
+    return data;
   }
 
   getShopName(): string {
-    const data: Array<any> = this.getJsonData()
-    return data[0].shopName
+    return this.shopData.shopName;
   }
 
   getAddress(): string {
-    const data: Array<any> = this.getJsonData()
-    return data[0].address
+    return this.shopData.address;
   }
 
   getPhone(): string {
-    const data: Array<any> = this.getJsonData()
-    return data[0].phone
+    return this.shopData.phone;
   }
 
   getHeader(): string {
-    const shopName: string = this.getShopName()
-    const address: string = this.getAddress()
-    const phone: string = this.getPhone()
-  
-    return `${shopName}\n\n${address}\nPhone: +${phone[0]} (${phone.slice(1,4)}) ${phone.slice(4,7)}-${phone.slice(7,11)}`
+    const shopName: string = this.getShopName();
+    const address: string = this.getAddress();
+    const phone: string = this.getPhone();
+
+    return `${shopName}\n\n${address}\nPhone: +${phone[0]} (${phone.slice(1,4)}) ${phone.slice(4, 7)}-${phone.slice(7, 11)}`;
   }
 
   getItemPrice(itemName: string): string {
-    const data: Array<any> = this.getJsonData()
-    const prices = data[0].prices[0]
-    const price = prices[`${itemName}`]
-  
-    return price
-    
+    const price = this.shopData.prices[0][`${itemName}`];
+    return price;
   }
 }
